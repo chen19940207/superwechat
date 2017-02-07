@@ -86,13 +86,16 @@ cn/ucai/superwechat/ui/ConversationListFragment.class
 org/apache/http/conn/params/ConnPerRouteBean.class
 com/easemob/redpacketsdk/RedPacket.class
 org/apache/http/HttpStatus.class
+android/support/v7/graphics/drawable/DrawerArrowDrawable.class
 com/baidu/mapapi/BMapManager.class
 cn/ucai/superwechat/ui/PublicChatRoomsActivity$2.class
+android/support/v7/app/ActionBar$OnNavigationListener.class
 com/huawei/android/pushagent/b/c/a.class
 cn/ucai/superwechat/ui/CallOptionActivity$4.class
 org/apache/http/NoHttpResponseException.class
 android/support/v4/view/accessibility/AccessibilityNodeProviderCompat.class
 com/bumptech/glide/load/DecodeFormat.class
+android/support/v7/appcompat/R.class
 cn/ucai/superwechat/adapter/GroupAdapter.class
 org/apache/http/auth/AuthSchemeRegistry.class
 com/xiaomi/mipush/sdk/PushMessageHandler$a.class
@@ -204,6 +207,7 @@ com/hyphenate/chat/EMTextMessageBody.class
 android/support/v4/view/ScrollingView.class
 com/easemob/redpacketui/recyclerview/widget/RecyclerView$SavedState.class
 cn/ucai/superwechat/ui/GroupDetailsActivity$9.class
+android/support/v7/app/ActionBar.class
 com/hyphenate/easeui/widget/EaseAlertDialog$AlertDialogUser.class
 android/support/v4/view/NestedScrollingChild.class
 org/apache/http/protocol/ResponseDate.class
@@ -222,6 +226,7 @@ org/apache/http/protocol/HTTP.class
 com/easemob/redpacketui/R$layout.class
 com/huawei/android/pushagent/b/f/a.class
 org/apache/http/message/ParserCursor.class
+android/support/v7/widget/LinearLayoutCompat$DividerMode.class
 com/hyphenate/easeui/ui/EaseBaiduMapActivity$BaiduSDKReceiver.class
 android/support/v4/app/FragmentManagerImpl$2.class
 cn/ucai/superwechat/ui/OfflinePushSettingsActivity$Status.class
@@ -255,6 +260,7 @@ android/support/v4/app/FragmentManagerImpl$3.class
 android/support/v4/widget/DrawerLayout$LockMode.class
 android/support/v4/media/MediaBrowserCompat$MediaItem$Flags.class
 com/easemob/redpacketui/recyclerview/widget/RecyclerView$LayoutParams.class
+android/support/v7/app/ActionBarActivity.class
 org/apache/http/impl/io/AbstractMessageParser.class
 cn/ucai/superwechat/ui/OfflinePushNickActivity$2.class
 org/apache/http/HttpResponseInterceptor.class
@@ -273,6 +279,7 @@ com/hyphenate/chat/EMChatManager.class
 com/hyphenate/media/EMLocalSurfaceView.class
 cn/ucai/superwechat/ui/NewFriendsMsgActivity.class
 com/umeng/update/UpdateConfig.class
+android/support/v7/widget/ActionMenuView$LayoutParams.class
 com/hyphenate/easeui/widget/EaseSwitchButton.class
 com/umeng/update/net/e.class
 org/apache/http/conn/HttpHostConnectException.class
@@ -431,6 +438,7 @@ org/apache/http/impl/conn/ProxySelectorRoutePlanner.class
 org/apache/http/impl/io/IdentityInputStream.class
 android/support/v4/view/ViewCompatBase.class
 com/hyphenate/easeui/ui/EaseBaiduMapActivity$1.class
+android/support/v7/appcompat/R$attr.class
 android/support/v4/view/accessibility/AccessibilityEventCompat.class
 org/apache/http/Header.class
 cn/ucai/superwechat/ui/EditActivity.class
@@ -440,6 +448,7 @@ com/easemob/redpacketui/ui/a/y.class
 android/support/v4/view/ViewCompatJB.class
 org/apache/http/impl/io/HttpResponseWriter.class
 com/bumptech/glide/RequestManager.class
+android/support/v7/app/ActionBar$NavigationMode.class
 cn/ucai/superwechat/ui/ChatActivity.class
 org/apache/http/impl/cookie/DateUtils.class
 android/support/v4/app/BaseFragmentActivityHoneycomb.class
@@ -460,6 +469,7 @@ org/apache/http/impl/client/BasicResponseHandler.class
 com/easemob/redpacketui/ui/activity/RPTransferDetailActivity$3.class
 org/apache/http/client/HttpClient.class
 android/support/v4/widget/MaterialProgressDrawable$Ring.class
+android/support/v7/internal/view/menu/MenuItemImpl.class
 org/apache/http/impl/HttpConnectionMetricsImpl.class
 com/baidu/mapapi/common/SysOSUtil.class
 org/apache/http/impl/client/EntityEnclosingRequestWrapper.class
@@ -473,6 +483,7 @@ android/support/v4/app/FragmentHostCallback.class
 android/support/multidex/MultiDex$V19.class
 cn/ucai/superwechat/ui/CallOptionActivity$5.class
 android/support/annotation/IntDef.class
+android/support/v7/app/AppCompatActivity.class
 org/apache/http/auth/AuthState.class
 com/huawei/android/pushagent/c/a/h.class
 org/apache/http/impl/entity/LaxContentLengthStrategy.class
@@ -513,6 +524,7 @@ org/apache/http/message/BasicHttpResponse.class
 com/easemob/redpacketui/ui/activity/RPRecordActivity$2.class
 org/apache/http/auth/AUTH.class
 com/huawei/android/pushagent/a.class
+android/support/v7/appcompat/R$style.class
 org/apache/http/util/EncodingUtils.class
 org/apache/http/impl/cookie/RFC2965PortAttributeHandler.class
 com/baidu/location/LocationClient.class
@@ -704,6 +716,7 @@ android/support/v4/media/MediaDescriptionCompat$Builder.class
 android/support/v4/media/MediaMetadataCompat$Builder.class
 cn/ucai/superwechat/ui/BlacklistActivity$BlacklistAdapter.class
 org/apache/http/protocol/HttpProcessor.class
+android/support/v7/widget/LinearLayoutCompat$OrientationMode.class
 com/easemob/redpacketui/recyclerview/widget/RecyclerView$2.class
 com/easemob/redpacketui/ui/activity/RPWebViewActivity$1.class
 com/easemob/redpacketui/recyclerview/widget/RecyclerView$SmoothScroller.class
@@ -745,9 +758,11 @@ org/apache/http/client/protocol/RequestDefaultHeaders.class
 com/bumptech/glide/load/model/GenericLoaderFactory.class
 org/apache/http/impl/AbstractHttpClientConnection.class
 android/support/v4/media/MediaMetadataCompatApi21$Builder.class
+android/support/v7/app/ActionBar$TabListener.class
 u/upd/a.class
 com/hyphenate/easeui/widget/photoview/EasePhotoView.class
 com/xiaomi/mipush/sdk/PushMessageHelper.class
+android/support/v7/app/ActionBar$LayoutParams.class
 com/hyphenate/chat/EMClient.class
 com/easemob/redpacketui/ui/activity/RPTransferDetailActivity$2.class
 org/apache/http/impl/DefaultHttpRequestFactory.class
@@ -805,6 +820,7 @@ com/umeng/update/net/DownloadingService.class
 android/support/annotation/MenuRes.class
 org/apache/http/client/CookieStore.class
 android/support/v4/view/LayoutInflaterFactory.class
+android/support/v7/view/ActionMode$Callback.class
 org/apache/http/params/DefaultedHttpParams.class
 android/support/v4/app/SharedElementCallback.class
 com/easemob/redpacketui/recyclerview/widget/RecyclerView$State.class
@@ -839,6 +855,7 @@ com/easemob/redpacketui/R$styleable.class
 com/easemob/redpacketui/recyclerview/widget/RecyclerView$1.class
 cn/ucai/superwechat/ui/ChatRoomDetailsActivity$3.class
 cn/ucai/superwechat/ui/GroupPickContactsActivity$2.class
+android/support/v7/appcompat/R$styleable.class
 android/support/multidex/MultiDexApplication.class
 org/apache/http/message/BasicNameValuePair.class
 com/baidu/mapapi/map/j.class
@@ -852,6 +869,7 @@ org/apache/http/impl/cookie/BasicPathHandler.class
 cn/ucai/superwechat/ui/CallOptionActivity$2.class
 cn/ucai/superwechat/ui/UserProfileActivity.class
 com/bumptech/glide/BitmapRequestBuilder.class
+android/support/v7/graphics/drawable/DrawerArrowDrawable$ArrowDirection.class
 com/alipay/mobile/framework/service/annotation/ResetCookie.class
 com/parse/ParseSQLiteCursor.class
 org/apache/http/impl/io/ChunkedInputStream.class
@@ -862,6 +880,7 @@ org/apache/commons/logging/impl/NoOpLog.class
 bolts/AggregateException.class
 org/apache/http/util/EntityUtils.class
 org/apache/commons/logging/Log.class
+android/support/v7/widget/LinearLayoutCompat.class
 com/easemob/redpacketui/recyclerview/widget/RecyclerView$ItemAnimator$ItemAnimatorListener.class
 cn/ucai/superwechat/ui/GroupSearchMessageActivity$3.class
 android/support/v4/media/MediaBrowserCompat$ItemCallback.class
@@ -917,11 +936,13 @@ cn/ucai/superwechat/ui/PublicGroupsActivity$2.class
 cn/ucai/superwechat/ui/GroupDetailsActivity$6.class
 org/apache/http/impl/auth/DigestSchemeFactory.class
 com/easemob/redpacketui/recyclerview/widget/RecyclerView$Adapter.class
+android/support/v4/graphics/drawable/DrawableCompat.class
 android/support/multidex/ZipUtil$CentralDirectory.class
 com/android/volley/Request.class
 org/apache/commons/codec/DecoderException.class
 com/huawei/android/pushagent/PushEventReceiver.class
 com/baidu/location/Poi.class
+android/support/v7/app/ActionBar$OnMenuVisibilityListener.class
 org/apache/http/message/BasicRequestLine.class
 android/support/v4/app/AppOpsManagerCompat.class
 com/easemob/redpacketsdk/presenter/IBasePresenter.class
@@ -985,9 +1006,11 @@ com/easemob/redpacketui/recyclerview/widget/RecyclerView$OnScrollListener.class
 com/umeng/update/UpdateResponse.class
 android/support/v4/app/FragmentManagerImpl.class
 org/apache/http/protocol/HttpRequestInterceptorList.class
+android/support/v7/app/ActionBar$Tab.class
 org/apache/http/client/UserTokenHandler.class
 android/support/v4/view/ViewCompatGingerbread.class
 org/apache/http/impl/SocketHttpClientConnection.class
+android/support/v7/internal/widget/TintTypedArray.class
 com/hyphenate/easeui/EaseConstant.class
 android/support/v4/view/ViewCompatKitKat.class
 org/apache/http/auth/params/AuthPNames.class
@@ -1024,6 +1047,7 @@ com/easemob/redpacketui/ui/activity/RPTransferActivity$2.class
 com/hyphenate/util/ImageUtils.class
 cn/ucai/superwechat/ui/NewGroupActivity.class
 android/support/v4/util/SimpleArrayMap.class
+android/support/v7/widget/LinearLayoutCompat$LayoutParams.class
 cn/ucai/superwechat/ui/PublicGroupsActivity.class
 com/bumptech/glide/DrawableOptions.class
 org/apache/http/impl/auth/DigestScheme.class
@@ -1044,12 +1068,14 @@ com/easemob/redpacketui/ui/activity/RPWebViewActivity$a.class
 cn/ucai/superwechat/ui/GroupDetailsActivity.class
 com/superrtc/util/AppRTCAudioManager.class
 org/apache/http/cookie/params/CookieSpecParamBean.class
+android/support/v7/view/ActionMode.class
 cn/ucai/superwechat/ui/PublicChatRoomsActivity$3.class
 org/apache/http/params/HttpProtocolParamBean.class
 com/hyphenate/chat/EMPushHelper.class
 android/support/v4/media/VolumeProviderCompatApi21.class
 android/support/v4/view/ViewCompat$ViewCompatImpl.class
 com/huawei/android/pushagent/PushReceiver$1.class
+android/support/v7/internal/widget/ViewUtils.class
 org/apache/http/impl/io/HttpRequestWriter.class
 org/apache/http/impl/conn/tsccm/BasicPoolEntryRef.class
 com/easemob/redpacketsdk/bean/RedPacketInfo.class
@@ -1149,6 +1175,7 @@ android/support/annotation/Size.class
 com/easemob/redpacketui/recyclerview/widget/RecyclerView$ItemAnimatorRestoreListener.class
 com/xiaomi/mipush/sdk/MiPushClient$MiPushClientCallback.class
 com/baidu/platform/comapi/map/k.class
+android/support/v7/app/ActionBar$DisplayOptions.class
 cn/ucai/superwechat/ui/GroupBlacklistActivity$1.class
 org/apache/http/entity/ContentProducer.class
 org/apache/http/HeaderElement.class
@@ -1217,6 +1244,7 @@ org/apache/http/UnsupportedHttpVersionException.class
 org/apache/http/conn/OperatedClientConnection.class
 cn/ucai/superwechat/ui/RobotsActivity$4.class
 com/easemob/redpacketui/ui/activity/RPGroupMemberActivity$3.class
+android/support/v4/view/GravityCompat.class
 android/support/v4/media/session/MediaSessionCompat$OnActiveChangeListener.class
 com/baidu/location/f.class
 com/easemob/redpacketui/ui/activity/RPTransferActivity.class

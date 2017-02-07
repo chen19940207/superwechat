@@ -22,6 +22,7 @@ ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:8:5-11:59
 MERGED from [com.android.support:multidex:1.0.1] E:\Android c\superwechat\superwechat\build\intermediates\exploded-aar\com.android.support\multidex\1.0.1\AndroidManifest.xml:18:5-42
 MERGED from [superwechat:redpacketlibrary:unspecified] E:\Android c\superwechat\superwechat\build\intermediates\exploded-aar\superwechat\redpacketlibrary\unspecified\AndroidManifest.xml:7:5-9:41
 MERGED from [superwechat:EaseUI:unspecified] E:\Android c\superwechat\superwechat\build\intermediates\exploded-aar\superwechat\EaseUI\unspecified\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:23.0.1] E:\Android c\superwechat\superwechat\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\AndroidManifest.xml:20:5-43
 	tools:overrideLibrary
 		ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:11:9-56
 	android:targetSdkVersion
@@ -122,28 +123,29 @@ ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:37:5-39:47
 		ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:39:9-44
 	android:name
 		ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:38:9-72
-uses-permission#com.hyphenate.chatuidemo.permission.C2D_MESSAGE
-ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:41:5-87
+uses-permission#cn.ucai.superwechat.permission.C2D_MESSAGE
+ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:41:5-82
 	android:name
-		ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:41:22-84
+		ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:41:22-79
 permission#com.hyphenate.superwechat.permission.MIPUSH_RECEIVE
 ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:43:5-45:55
 	android:protectionLevel
 		ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:45:9-52
 	android:name
 		ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:44:9-75
-uses-permission#com.hyphenate.chatuidemo.permission.MIPUSH_RECEIVE
-ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:47:5-90
+uses-permission#cn.ucai.superwechat.permission.MIPUSH_RECEIVE
+ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:47:5-85
 	android:name
-		ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:47:22-87
+		ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:47:22-82
 application
 ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:49:5-500:19
+MERGED from [com.android.support:appcompat-v7:23.0.1] E:\Android c\superwechat\superwechat\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\AndroidManifest.xml:22:5-20
 	android:label
 		ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:53:9-41
 	android:allowBackup
 		ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:51:9-35
 	android:icon
-		ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:52:9-48
+		ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:52:9-43
 	android:name
 		ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:50:9-40
 activity#cn.ucai.superwechat.ui.MainActivity
@@ -642,16 +644,16 @@ ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:357:9-366:20
 		ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:360:13-73
 	android:name
 		ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:358:13-69
-intent-filter#com.google.android.c2dm.intent.RECEIVE+com.hyphenate.chatuidemo
+intent-filter#cn.ucai.superwechat+com.google.android.c2dm.intent.RECEIVE
 ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:361:13-365:29
 action#com.google.android.c2dm.intent.RECEIVE
 ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:362:17-81
 	android:name
 		ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:362:25-78
-category#com.hyphenate.chatuidemo
-ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:364:17-69
+category#cn.ucai.superwechat
+ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:364:17-64
 	android:name
-		ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:364:27-66
+		ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:364:27-61
 service#com.hyphenate.chat.EMGCMListenerService
 ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:368:9-370:40
 	android:exported
@@ -664,7 +666,7 @@ ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:372:9-380:20
 		ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:374:13-37
 	android:name
 		ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:373:13-54
-intent-filter#com.hyphenate.chatuidemo+com.hyphenate.sdk.push
+intent-filter#cn.ucai.superwechat+com.hyphenate.sdk.push
 ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:375:13-379:29
 action#com.hyphenate.sdk.push
 ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:376:17-65
