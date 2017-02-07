@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Tue Feb 07 17:18:39 CST 2017
+#Tue Feb 07 19:10:42 CST 2017
 100.set=ANDROID_RESOURCE
 57.file=E\:\\Android c\\superwechat\\superwechat\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\ease_row_received_location.xml
 145.file=E\:\\Android c\\superwechat\\superwechat\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-hdpi-v4\\ease_record_animate_07.png
