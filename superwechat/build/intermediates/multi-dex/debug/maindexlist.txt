@@ -322,6 +322,7 @@ org/apache/http/cookie/CookieSpec.class
 android/support/v4/view/ViewCompat$GBViewCompatImpl.class
 org/apache/commons/codec/EncoderException.class
 org/apache/http/impl/cookie/RFC2965DomainAttributeHandler.class
+cn/ucai/superwechat/ui/LoginActivity$4.class
 com/easemob/redpacketsdk/utils/RequestUtil.class
 com/hyphenate/media/EMOppositeSurfaceView.class
 org/apache/http/entity/StringEntity.class
