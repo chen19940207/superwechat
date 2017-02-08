@@ -278,6 +278,10 @@
     <init>();
 }
 
+-keep class cn.ucai.superwechat.ui.GuideActivity {
+    <init>();
+}
+
 -keep public class * extends android.app.Instrumentation {
     <init>();
 }

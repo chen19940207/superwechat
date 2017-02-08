@@ -67,3 +67,4 @@
 -keep class com.hyphenate.chat.EMJobService { <init>(); }
 -keep class com.hyphenate.chat.EMMonitorReceiver { <init>(); }
 -keep class com.baidu.location.f { <init>(); }
+-keep class cn.ucai.superwechat.ui.GuideActivity { <init>(); }
