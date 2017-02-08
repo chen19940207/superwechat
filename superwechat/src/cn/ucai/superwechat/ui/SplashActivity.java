@@ -8,6 +8,8 @@ import android.widget.TextView;
 import com.hyphenate.chat.EMClient;
 import cn.ucai.superwechat.SuperWeChatHelper;
 import cn.ucai.superwechat.R;
+import cn.ucai.superwechat.utils.MFGT;
+
 import com.hyphenate.util.EasyUtils;
 
 /**
@@ -67,7 +69,7 @@ public class SplashActivity extends BaseActivity {
 						Thread.sleep(sleepTime);
 					} catch (InterruptedException e) {
 					}
-					startActivity(new Intent(SplashActivity.this, GuideActivity.class));
+					MFGT.gotoGuide(SplashActivity.this);
 					finish();
 				}
 			}

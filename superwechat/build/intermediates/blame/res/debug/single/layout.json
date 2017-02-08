@@ -620,6 +620,10 @@
         "source": "E:\\Android c\\superwechat\\superwechat\\build\\intermediates\\exploded-aar\\superwechat\\EaseUI\\unspecified\\res\\layout\\ease_fragment_conversation_list.xml"
     },
     {
+        "merged": "E:\\Android c\\superwechat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\view_layout_title.xml",
+        "source": "E:\\Android c\\superwechat\\superwechat\\res\\layout\\view_layout_title.xml"
+    },
+    {
         "merged": "E:\\Android c\\superwechat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_chat_input_menu.xml",
         "source": "E:\\Android c\\superwechat\\superwechat\\build\\intermediates\\exploded-aar\\superwechat\\EaseUI\\unspecified\\res\\layout\\ease_widget_chat_input_menu.xml"
     },
