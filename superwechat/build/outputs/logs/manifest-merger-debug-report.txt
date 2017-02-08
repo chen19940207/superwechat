@@ -792,9 +792,9 @@ ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:452:9-454:75
 	android:name
 		ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:453:13-65
 meta-data#EASEMOB_APPKEY
-ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:457:9-459:55
+ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:457:9-459:51
 	android:value
-		ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:459:13-52
+		ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:459:13-48
 	android:name
 		ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:458:13-42
 service#com.hyphenate.chat.EMChatService
