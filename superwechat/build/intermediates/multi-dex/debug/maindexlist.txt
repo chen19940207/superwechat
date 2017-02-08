@@ -178,6 +178,7 @@ com/parse/ParseRole.class
 com/parse/ParsePin.class
 com/easemob/redpacketsdk/contract/ChangeContract$View.class
 com/hyphenate/easeui/ui/EaseBaiduMapActivity.class
+cn/ucai/superwechat/db/SuperWeChatDBManager.class
 org/apache/http/cookie/CookieSpecFactory.class
 cn/ucai/superwechat/ui/ChatRoomDetailsActivity$GridAdapter.class
 org/apache/http/StatusLine.class
@@ -201,7 +202,6 @@ android/support/annotation/AnyRes.class
 android/support/v4/view/ViewCompat$BaseViewCompatImpl.class
 com/huawei/android/pushagent/b/f/b.class
 android/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase.class
-cn/ucai/superwechat/DemoModel.class
 cn/ucai/superwechat/ui/BlacklistActivity$1.class
 com/hyphenate/chat/EMTextMessageBody.class
 android/support/v4/view/ScrollingView.class
@@ -575,7 +575,6 @@ org/apache/http/impl/conn/SingleClientConnManager.class
 cn/ucai/superwechat/ui/VoiceCallActivity$2.class
 cn/ucai/superwechat/ui/UserProfileActivity$3.class
 com/huawei/android/pushagent/PushReceiver.class
-cn/ucai/superwechat/db/DemoDBManager.class
 org/apache/http/impl/cookie/BasicClientCookie2.class
 org/apache/http/impl/conn/tsccm/BasicPoolEntry.class
 org/apache/http/entity/AbstractHttpEntity.class
@@ -583,6 +582,7 @@ org/apache/http/auth/params/AuthParams.class
 cn/ucai/superwechat/ui/ContactListFragment.class
 com/xiaomi/mipush/sdk/MessageHandleService.class
 android/net/http/SslCertificate.class
+cn/ucai/superwechat/SuperWeChatHelper.class
 org/apache/commons/codec/StringDecoder.class
 org/apache/http/cookie/CookieOrigin.class
 com/bumptech/glide/GifRequestBuilder.class
@@ -915,7 +915,6 @@ org/apache/http/ProtocolVersion.class
 cn/ucai/superwechat/ui/RecorderVideoActivity.class
 android/support/v4/media/MediaDescriptionCompat.class
 android/support/v4/media/session/MediaSessionCompat$QueueItem.class
-cn/ucai/superwechat/DemoHelper.class
 org/apache/commons/codec/StringEncoder.class
 org/apache/http/conn/params/ConnManagerPNames.class
 com/easemob/redpacketui/d/i.class
@@ -1043,6 +1042,7 @@ com/alimama/mobile/a$a.class
 com/baidu/mapapi/SDKInitializer.class
 org/apache/http/impl/conn/tsccm/WaitingThreadAborter.class
 cn/ucai/superwechat/ui/PickAtUserActivity$1.class
+cn/ucai/superwechat/SuperWeChatModel.class
 com/easemob/redpacketui/ui/activity/RPTransferActivity$2.class
 com/hyphenate/util/ImageUtils.class
 cn/ucai/superwechat/ui/NewGroupActivity.class
@@ -1155,6 +1155,7 @@ cn/ucai/superwechat/ui/GroupBlacklistActivity$2.class
 com/easemob/redpacketui/netstatus/a.class
 android/support/v4/view/ViewCompatICSMr1.class
 cn/ucai/superwechat/ui/SetServersActivity$1.class
+cn/ucai/superwechat/SuperWeChatApplication.class
 org/apache/commons/codec/net/RFC1522Codec.class
 com/hyphenate/easeui/ui/EaseShowBigImageActivity$1.class
 com/huawei/android/pushagent/c/c/b.class
@@ -1236,7 +1237,6 @@ cn/ucai/superwechat/ui/GroupBlacklistActivity.class
 org/apache/http/client/params/AllClientPNames.class
 org/apache/http/HttpResponse.class
 cn/ucai/superwechat/ui/RegisterActivity$1.class
-cn/ucai/superwechat/DemoApplication.class
 com/easemob/redpacketui/e/b.class
 org/apache/http/client/protocol/RequestAddCookies.class
 cn/ucai/superwechat/R$raw.class

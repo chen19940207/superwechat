@@ -141,13 +141,13 @@ application
 ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:49:5-500:19
 MERGED from [com.android.support:appcompat-v7:23.0.1] E:\Android c\superwechat\superwechat\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\AndroidManifest.xml:22:5-20
 	android:label
-		ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:53:9-41
+		ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:53:9-44
 	android:allowBackup
 		ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:51:9-35
 	android:icon
 		ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:52:9-43
 	android:name
-		ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:50:9-40
+		ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:50:9-47
 activity#cn.ucai.superwechat.ui.MainActivity
 ADDED from E:\Android c\superwechat\superwechat\AndroidManifest.xml:54:9-59:55
 	android:screenOrientation
