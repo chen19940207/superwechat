@@ -27,10 +27,10 @@ public class SplashActivity extends BaseActivity {
 		RelativeLayout rootLayout = (RelativeLayout) findViewById(R.id.splash_root);
 		TextView versionText = (TextView) findViewById(R.id.tv_version);
 
-		versionText.setText(getVersion());
-		AlphaAnimation animation = new AlphaAnimation(0.3f, 1.0f);
-		animation.setDuration(1500);
-		rootLayout.startAnimation(animation);
+//		versionText.setText(getVersion());
+//		AlphaAnimation animation = new AlphaAnimation(0.3f, 1.0f);
+//		animation.setDuration(1500);
+//		rootLayout.startAnimation(animation);
 	}
 
 	@Override

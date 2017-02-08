@@ -24,12 +24,12 @@
         "source": "E:\\Android c\\superwechat\\superwechat\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable-xhdpi\\abc_btn_rating_star_on_mtrl_alpha.png"
     },
     {
-        "merged": "E:\\Android c\\superwechat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\em_msg_state_fail_resend.png",
-        "source": "E:\\Android c\\superwechat\\superwechat\\res\\drawable-xhdpi\\em_msg_state_fail_resend.png"
-    },
-    {
         "merged": "E:\\Android c\\superwechat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\em_unread_count_bg.9.png",
         "source": "E:\\Android c\\superwechat\\superwechat\\res\\drawable-xhdpi\\em_unread_count_bg.9.png"
+    },
+    {
+        "merged": "E:\\Android c\\superwechat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\em_msg_state_fail_resend.png",
+        "source": "E:\\Android c\\superwechat\\superwechat\\res\\drawable-xhdpi\\em_msg_state_fail_resend.png"
     },
     {
         "merged": "E:\\Android c\\superwechat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\em_chat_video_normal.png",
@@ -64,12 +64,12 @@
         "source": "E:\\Android c\\superwechat\\superwechat\\res\\drawable-xhdpi\\w7.png"
     },
     {
-        "merged": "E:\\Android c\\superwechat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\em_icon_speaker_on.png",
-        "source": "E:\\Android c\\superwechat\\superwechat\\res\\drawable-xhdpi\\em_icon_speaker_on.png"
-    },
-    {
         "merged": "E:\\Android c\\superwechat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\em_default_avatar.png",
         "source": "E:\\Android c\\superwechat\\superwechat\\res\\drawable-xhdpi\\em_default_avatar.png"
+    },
+    {
+        "merged": "E:\\Android c\\superwechat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\em_icon_speaker_on.png",
+        "source": "E:\\Android c\\superwechat\\superwechat\\res\\drawable-xhdpi\\em_icon_speaker_on.png"
     },
     {
         "merged": "E:\\Android c\\superwechat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\abc_btn_switch_to_on_mtrl_00001.9.png",
@@ -92,12 +92,12 @@
         "source": "E:\\Android c\\superwechat\\superwechat\\res\\drawable-xhdpi\\icon_035_cover.png"
     },
     {
-        "merged": "E:\\Android c\\superwechat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\em_chat_video_call_pressed.png",
-        "source": "E:\\Android c\\superwechat\\superwechat\\res\\drawable-xhdpi\\em_chat_video_call_pressed.png"
-    },
-    {
         "merged": "E:\\Android c\\superwechat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\em_logo_uidemo.png",
         "source": "E:\\Android c\\superwechat\\superwechat\\res\\drawable-xhdpi\\em_logo_uidemo.png"
+    },
+    {
+        "merged": "E:\\Android c\\superwechat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\em_chat_video_call_pressed.png",
+        "source": "E:\\Android c\\superwechat\\superwechat\\res\\drawable-xhdpi\\em_chat_video_call_pressed.png"
     },
     {
         "merged": "E:\\Android c\\superwechat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\abc_ic_menu_selectall_mtrl_alpha.png",
