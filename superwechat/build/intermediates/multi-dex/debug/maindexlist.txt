@@ -135,7 +135,6 @@ cn/ucai/superwechat/ui/OfflinePushSettingsActivity$1.class
 cn/ucai/superwechat/ui/MainActivity$3.class
 com/easemob/redpacketsdk/contract/VerifyIDContract$View.class
 cn/ucai/superwechat/ui/VideoCallActivity$BrightnessDataProcess.class
-cn/ucai/superwechat/utils/OkHttpUtils.class
 butterknife/BindString.class
 com/easemob/redpacketui/ui/activity/RPRedPacketActivity.class
 com/hyphenate/chat/EMMonitor.class
@@ -573,6 +572,7 @@ cn/ucai/superwechat/ui/GroupSearchMessageActivity$ViewHolder.class
 cn/ucai/superwechat/ui/MainActivity$7.class
 org/apache/http/impl/cookie/RFC2965Spec.class
 android/support/v4/view/ViewCompat$ICSMr1ViewCompatImpl.class
+cn/ucai/superwechat/net/OnCompleteListener.class
 org/apache/commons/codec/net/URLCodec.class
 android/support/v4/app/NotificationCompat$Builder.class
 com/baidu/location/a/b$b.class
@@ -1117,6 +1117,7 @@ com/superrtc/util/AppRTCAudioManager.class
 org/apache/http/cookie/params/CookieSpecParamBean.class
 android/support/v7/view/ActionMode.class
 cn/ucai/superwechat/ui/PublicChatRoomsActivity$3.class
+cn/ucai/superwechat/utils/MD5.class
 butterknife/internal/ListenerClass.class
 org/apache/http/params/HttpProtocolParamBean.class
 com/hyphenate/chat/EMPushHelper.class

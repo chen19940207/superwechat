@@ -168,12 +168,12 @@
         "source": "E:\\Android c\\superwechat\\superwechat\\redpacketlibrary\\res\\drawable-xxhdpi\\rp_jd_grey_icon.png"
     },
     {
-        "merged": "E:\\Android c\\superwechat\\superwechat\\redpacketlibrary\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\rp_closed_yellow_icon.png",
-        "source": "E:\\Android c\\superwechat\\superwechat\\redpacketlibrary\\res\\drawable-xxhdpi\\rp_closed_yellow_icon.png"
-    },
-    {
         "merged": "E:\\Android c\\superwechat\\superwechat\\redpacketlibrary\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\rp_exclusive_sender_avatar_bg.png",
         "source": "E:\\Android c\\superwechat\\superwechat\\redpacketlibrary\\res\\drawable-xxhdpi\\rp_exclusive_sender_avatar_bg.png"
+    },
+    {
+        "merged": "E:\\Android c\\superwechat\\superwechat\\redpacketlibrary\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\rp_closed_yellow_icon.png",
+        "source": "E:\\Android c\\superwechat\\superwechat\\redpacketlibrary\\res\\drawable-xxhdpi\\rp_closed_yellow_icon.png"
     },
     {
         "merged": "E:\\Android c\\superwechat\\superwechat\\redpacketlibrary\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\rp_question_blue.png",
