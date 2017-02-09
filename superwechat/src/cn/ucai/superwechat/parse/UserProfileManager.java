@@ -18,6 +18,7 @@ import com.hyphenate.easeui.domain.EaseUser;
 import com.hyphenate.easeui.domain.User;
 
 import java.util.ArrayList;
+import java.util.IllegalFormatCodePointException;
 import java.util.List;
 
 public class UserProfileManager {
@@ -175,7 +176,11 @@ public class UserProfileManager {
 					Result result = ResultUtils.getListResultFromJson(s, User.class);
 					if (result != null && result.isRetMsg()) {
 						User user = (User) result.getRetData();
-						setCurrentUserNick(user.getMUserNick());
+						if (user != null) {
+							SuperWeChatHelper.getInstance().saveAppContact(user);
+							setCurrentUserNick(user.getMUserNick());
+							setCurrentUserAvatar(user.getAvatar());
+						}
 					}
 				}
 			}

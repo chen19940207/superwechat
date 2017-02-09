@@ -1,4 +1,4 @@
-#Thu Feb 09 10:38:44 CST 2017
+#Thu Feb 09 20:15:20 CST 2017
 base.0=E\:\\Android c\\superwechat\\superwechat\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
 renamed.1=classes.dex
 renamed.0=classes2.dex
