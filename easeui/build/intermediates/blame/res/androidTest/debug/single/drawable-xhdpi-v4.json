@@ -52,6 +52,10 @@
         "source": "E:\\Android c\\superwechat\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\ease_new_friends_icon.png"
     },
     {
+        "merged": "E:\\Android c\\superwechat\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\default_hd_avatar.png",
+        "source": "E:\\Android c\\superwechat\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\default_hd_avatar.png"
+    },
+    {
         "merged": "E:\\Android c\\superwechat\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\ease_default_avatar.png",
         "source": "E:\\Android c\\superwechat\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\ease_default_avatar.png"
     },

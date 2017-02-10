@@ -87,6 +87,8 @@ public class MainActivity extends BaseActivity implements DMTabHost.OnCheckedCha
     // private TextView unreadAddressLable;
 
     private ContactListFragment contactListFragment;
+
+
     private ProfileFragment profileFragment;
     private ConversationListFragment conversationListFragment;
     private DiscoverFragment discoverFragment;

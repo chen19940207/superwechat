@@ -60,17 +60,16 @@ public class DbOpenHelper extends SQLiteOpenHelper {
             + UserDao.USER_TABLE_NAME + " ("
             + UserDao.USER_COLUMN_NAME + " TEXT PRIMARY KEY, "
             + UserDao.USER_COLUMN_NAME_NICK + " TEXT, "
-            + UserDao.USER_COLUMN_NAME_AVATAR_ID + " INTEGER,"
+            + UserDao.USER_COLUMN_NAME_AVATAR_ID + " INTEGER, "
             + UserDao.USER_COLUMN_NAME_AVATAR_NAME + " TEXT,"
             + UserDao.USER_COLUMN_NAME_AVATAR_SUFFIX + " TEXT,"
             + UserDao.USER_COLUMN_NAME_AVATAR_PATH + " TEXT,"
-            + UserDao.USER_COLUMN_NAME_AVATAR_TYPE + " INTEGER"
+            + UserDao.USER_COLUMN_NAME_AVATAR_TYPE + " INTEGER,"
             + UserDao.USER_COLUMN_NAME_AVATAR_UPDATE_TIEM + " TEXT);";
 
     private DbOpenHelper(Context context) {
         super(context, getUserDatabaseName(), null, DATABASE_VERSION);
     }
-
     public static DbOpenHelper getInstance(Context context) {
         if (instance == null) {
             instance = new DbOpenHelper(context.getApplicationContext());

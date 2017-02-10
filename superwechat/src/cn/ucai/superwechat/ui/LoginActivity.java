@@ -80,7 +80,6 @@ public class LoginActivity extends BaseActivity {
         if (SuperWeChatHelper.getInstance().isLoggedIn()) {
             autoLogin = true;
             startActivity(new Intent(LoginActivity.this, MainActivity.class));
-
             return;
         }
         setContentView(R.layout.em_activity_login);
@@ -88,11 +87,8 @@ public class LoginActivity extends BaseActivity {
         imgBack.setVisibility(View.VISIBLE);
         txtTitle.setVisibility(View.VISIBLE);
         txtTitle.setText(R.string.login);
-
         setListener();
-
     }
-
     private void setListener() {
         // if user changed, clear the password
         etUsername.addTextChangedListener(new TextWatcher() {
@@ -155,39 +151,7 @@ public class LoginActivity extends BaseActivity {
         SuperWeChatHelper.getInstance().setCurrentUserName(currentUsername);
 
         final long start = System.currentTimeMillis();
-
         loginEMServer();
-    }
-
-    private void loginAppServer() {
-        NetDao.login(this, currentUsername, currentPassword, new OnCompleteListener<String>() {
-            @Override
-            public void onSuccess(String s) {
-                if (s != null) {
-                    Result result = ResultUtils.getResultFromJson(s, User.class);
-                    if (result != null) {
-                        loginEMServer();
-                    } else {
-                        pd.dismiss();
-                        if (result.getRetCode() == I.MSG_LOGIN_UNKNOW_USER) {
-                            CommonUtils.showShortToast("账户不存在");
-                        } else if (result.getRetCode() == I.MSG_LOGIN_ERROR_PASSWORD) {
-                            CommonUtils.showShortToast("用户密码错误");
-                        } else {
-                            CommonUtils.showShortToast(R.string.Login_failed);
-                        }
-                    }
-                } else {
-                    pd.dismiss();
-                    CommonUtils.showShortToast(R.string.Login_failed);
-                }
-            }
-
-            @Override
-            public void onError(String error) {
-
-            }
-        });
     }
 
     private void loginEMServer() {
@@ -198,7 +162,6 @@ public class LoginActivity extends BaseActivity {
             @Override
             public void onSuccess() {
                 Log.d(TAG, "login: onSuccess");
-
                 loginSuccess();
             }
 
@@ -248,15 +211,6 @@ public class LoginActivity extends BaseActivity {
 
         finish();
     }
-
-//    /**
-//     * register
-//     *
-//     * @param view
-//     */
-//    public void register(View view) {
-//        startActivityForResult(new Intent(this, RegisterActivity.class), 0);
-//    }
 
     @Override
     protected void onResume() {

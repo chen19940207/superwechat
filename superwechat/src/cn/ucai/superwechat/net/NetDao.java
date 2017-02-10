@@ -42,7 +42,7 @@ public class NetDao {
                 .execute(listener);
     }
 
-    public static void getUserInfoUsername(Context context, String username,
+    public static void getUserInfoByUsername(Context context, String username,
                                 OnCompleteListener<String> listener) {
         OkHttpUtils<String> utils = new OkHttpUtils<>(context);
         utils.setRequestUrl(I.REQUEST_FIND_USER)

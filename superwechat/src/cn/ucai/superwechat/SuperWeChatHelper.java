@@ -77,9 +77,9 @@ public class SuperWeChatHelper {
     }
 
     protected static final String TAG = "SuperWeChatHelper";
-    
+
 	private EaseUI easeUI;
-	
+
     /**
      * EMEventListener
      */
@@ -94,9 +94,9 @@ public class SuperWeChatHelper {
 	private UserProfileManager userProManager;
 
 	private static SuperWeChatHelper instance = null;
-	
+
 	private SuperWeChatModel superWeChatModel = null;
-	
+
 	/**
      * sync groups status listener
      */
@@ -116,7 +116,7 @@ public class SuperWeChatHelper {
     private boolean isGroupsSyncedWithServer = false;
     private boolean isContactsSyncedWithServer = false;
     private boolean isBlackListSyncedWithServer = false;
-	
+
 	public boolean isVoiceCalling;
     public boolean isVideoCalling;
 
@@ -145,7 +145,7 @@ public class SuperWeChatHelper {
 
 	/**
 	 * init helper
-	 * 
+	 *
 	 * @param context
 	 *            application context
 	 */
@@ -155,7 +155,7 @@ public class SuperWeChatHelper {
 	    //use default options if options is null
 		if (EaseUI.getInstance().init(context, options)) {
 		    appContext = context;
-		    
+
 		    //debug mode, you'd better set it to false, if you want release your App officially.
 		    EMClient.getInstance().setDebugMode(true);
 		    //get easeui instance
@@ -219,10 +219,10 @@ public class SuperWeChatHelper {
 		}
 	}
 
-	
+
 	private EMOptions initChatOptions(){
         Log.d(TAG, "init HuanXin Options");
-        
+
         EMOptions options = new EMOptions();
         // set if accept the invitation automatically
         options.setAcceptInvitationAlways(false);
@@ -251,7 +251,7 @@ public class SuperWeChatHelper {
         if (superWeChatModel.isCustomAppkeyEnabled() && superWeChatModel.getCutomAppkey() != null && !superWeChatModel.getCutomAppkey().isEmpty()) {
             options.setAppKey(superWeChatModel.getCutomAppkey());
         }
-        
+
         options.allowChatroomOwnerLeave(getModel().isChatroomOwnerLeaveAllowed());
         options.setDeleteMessagesAsExitGroup(getModel().isDeleteMessagesAsExitGroup());
         options.setAutoAcceptGroupInvitation(getModel().isAutoAcceptGroupInvitation());
@@ -262,7 +262,7 @@ public class SuperWeChatHelper {
     protected void setEaseUIProviders() {
     	// set profile provider if you want easeUI to handle avatar and nickname
         easeUI.setUserProfileProvider(new EaseUserProfileProvider() {
-            
+
             @Override
             public EaseUser getUser(String username) {
                 return getUserInfo(username);
@@ -276,22 +276,22 @@ public class SuperWeChatHelper {
 
         //set options 
         easeUI.setSettingsProvider(new EaseSettingsProvider() {
-            
+
             @Override
             public boolean isSpeakerOpened() {
                 return superWeChatModel.getSettingMsgSpeaker();
             }
-            
+
             @Override
             public boolean isMsgVibrateAllowed(EMMessage message) {
                 return superWeChatModel.getSettingMsgVibrate();
             }
-            
+
             @Override
             public boolean isMsgSoundAllowed(EMMessage message) {
                 return superWeChatModel.getSettingMsgSound();
             }
-            
+
             @Override
             public boolean isMsgNotifyAllowed(EMMessage message) {
                 if(message == null){
@@ -321,7 +321,7 @@ public class SuperWeChatHelper {
         });
         //set emoji icon provider
         easeUI.setEmojiconInfoProvider(new EaseEmojiconInfoProvider() {
-            
+
             @Override
             public EaseEmojicon getEmojiconInfo(String emojiconIdentityCode) {
                 EaseEmojiconGroupEntity data = EmojiconExampleGroupData.getData();
@@ -338,22 +338,22 @@ public class SuperWeChatHelper {
                 return null;
             }
         });
-        
+
         //set notification options, will use default if you don't set it
         easeUI.getNotifier().setNotificationInfoProvider(new EaseNotificationInfoProvider() {
-            
+
             @Override
             public String getTitle(EMMessage message) {
               //you can update title here
                 return null;
             }
-            
+
             @Override
             public int getSmallIcon(EMMessage message) {
               //you can update icon here
                 return 0;
             }
-            
+
             @Override
             public String getDisplayedText(EMMessage message) {
             	// be used on notification bar, different text according the message type.
@@ -374,14 +374,14 @@ public class SuperWeChatHelper {
                     return message.getFrom() + ": " + ticker;
                 }
             }
-            
+
             @Override
             public String getLatestText(EMMessage message, int fromUsersNum, int messageNum) {
                 // here you can customize the text.
                 // return fromUsersNum + "contacts send " + messageNum + "messages to you";
             	return null;
             }
-            
+
             @Override
             public Intent getLaunchIntent(EMMessage message) {
             	// you can set what activity you want display when user click the notification
@@ -404,7 +404,7 @@ public class SuperWeChatHelper {
                         }else{
                             intent.putExtra("chatType", Constant.CHATTYPE_CHATROOM);
                         }
-                        
+
                     }
                 }
                 return intent;
@@ -420,11 +420,11 @@ public class SuperWeChatHelper {
         syncGroupsListeners = new ArrayList<DataSyncListener>();
         syncContactsListeners = new ArrayList<DataSyncListener>();
         syncBlackListListeners = new ArrayList<DataSyncListener>();
-        
+
         isGroupsSyncedWithServer = superWeChatModel.isGroupsSynced();
         isContactsSyncedWithServer = superWeChatModel.isContactSynced();
         isBlackListSyncedWithServer = superWeChatModel.isBacklistSynced();
-        
+
         // create the global connection listener
         connectionListener = new EMConnectionListener() {
             @Override
@@ -466,21 +466,21 @@ public class SuperWeChatHelper {
         }
 
         //register incoming call receiver
-        appContext.registerReceiver(callReceiver, callFilter);    
+        appContext.registerReceiver(callReceiver, callFilter);
         //register connection listener
-        EMClient.getInstance().addConnectionListener(connectionListener);       
+        EMClient.getInstance().addConnectionListener(connectionListener);
         //register group and contact event listener
         registerGroupAndContactListener();
         //register message event listener
         registerMessageListener();
-        
+
     }
-    
+
     private void initDbDao() {
         inviteMessgeDao = new InviteMessgeDao(appContext);
         userDao = new UserDao(appContext);
     }
-    
+
     /**
      * register group and contact listener, you need register when login
      */
@@ -490,9 +490,9 @@ public class SuperWeChatHelper {
             EMClient.getInstance().contactManager().setContactListener(new MyContactListener());
             isGroupAndContactListenerRegisted = true;
         }
-        
+
     }
-    
+
     /**
      * group change listener
      */
@@ -500,9 +500,9 @@ public class SuperWeChatHelper {
 
         @Override
         public void onInvitationReceived(String groupId, String groupName, String inviter, String reason) {
-            
+
             new InviteMessgeDao(appContext).deleteMessage(groupId);
-            
+
             // user invite you to join group
             InviteMessage msg = new InviteMessage();
             msg.setFrom(groupId);
@@ -519,9 +519,9 @@ public class SuperWeChatHelper {
 
         @Override
         public void onInvitationAccepted(String groupId, String invitee, String reason) {
-            
+
             new InviteMessgeDao(appContext).deleteMessage(groupId);
-            
+
             //user accept your invitation
             boolean hasGroup = false;
             EMGroup _group = null;
@@ -534,7 +534,7 @@ public class SuperWeChatHelper {
             }
             if (!hasGroup)
                 return;
-            
+
             InviteMessage msg = new InviteMessage();
             msg.setFrom(groupId);
             msg.setTime(System.currentTimeMillis());
@@ -547,12 +547,12 @@ public class SuperWeChatHelper {
             notifyNewInviteMessage(msg);
             broadcastManager.sendBroadcast(new Intent(Constant.ACTION_GROUP_CHANAGED));
         }
-        
+
         @Override
         public void onInvitationDeclined(String groupId, String invitee, String reason) {
-            
+
             new InviteMessgeDao(appContext).deleteMessage(groupId);
-            
+
             //user declined your invitation
             EMGroup group = null;
             for (EMGroup _group : EMClient.getInstance().groupManager().getAllGroups()) {
@@ -563,7 +563,7 @@ public class SuperWeChatHelper {
             }
             if (group == null)
                 return;
-            
+
             InviteMessage msg = new InviteMessage();
             msg.setFrom(groupId);
             msg.setTime(System.currentTimeMillis());
@@ -585,13 +585,13 @@ public class SuperWeChatHelper {
 
         @Override
         public void onGroupDestroyed(String groupId, String groupName) {
-        	// group is dismissed, 
+        	// group is dismissed,
             broadcastManager.sendBroadcast(new Intent(Constant.ACTION_GROUP_CHANAGED));
         }
 
         @Override
         public void onRequestToJoinReceived(String groupId, String groupName, String applyer, String reason) {
-            
+
             // user apply to join group
             InviteMessage msg = new InviteMessage();
             msg.setFrom(applyer);
@@ -649,10 +649,10 @@ public class SuperWeChatHelper {
             broadcastManager.sendBroadcast(new Intent(Constant.ACTION_GROUP_CHANAGED));
         }
     }
-    
+
     /***
      * 好友变化listener
-     * 
+     *
      */
     public class MyContactListener implements EMContactListener {
 
@@ -727,7 +727,7 @@ public class SuperWeChatHelper {
             Log.d(username, username + " refused to your request");
         }
     }
-    
+
     /**
      * save and notify invitation message
      * @param msg
@@ -753,7 +753,7 @@ public class SuperWeChatHelper {
         intent.putExtra(exception, true);
         appContext.startActivity(intent);
     }
- 
+
 	private EaseUser getUserInfo(String username){
 		// To get instance of EaseUser, here we get it from the user list in memory
 		// You'd better cache it if you get it from your server
@@ -787,7 +787,7 @@ public class SuperWeChatHelper {
         }
         return user;
     }
-	
+
 	 /**
      * Global listener
      * If this event already handled by an activity, you don't need handle it again
@@ -807,7 +807,7 @@ public class SuperWeChatHelper {
 			        }
 			    }
 			}
-			
+
 			@Override
 			public void onCmdMessageReceived(List<EMMessage> messages) {
 			    for (EMMessage message : messages) {
@@ -838,23 +838,23 @@ public class SuperWeChatHelper {
 			@Override
 			public void onMessageRead(List<EMMessage> messages) {
 			}
-			
+
 			@Override
 			public void onMessageDelivered(List<EMMessage> message) {
 			}
-			
+
 			@Override
 			public void onMessageChanged(EMMessage message, Object change) {
-				
+
 			}
 		};
-		
+
         EMClient.getInstance().chatManager().addMessageListener(messageListener);
     }
 
 	/**
 	 * if ever logged in
-	 * 
+	 *
 	 * @return
 	 */
 	public boolean isLoggedIn() {
@@ -863,7 +863,7 @@ public class SuperWeChatHelper {
 
 	/**
 	 * logout
-	 * 
+	 *
 	 * @param unbindDeviceToken
 	 *            whether you need unbind your device token
 	 * @param callback
@@ -901,7 +901,7 @@ public class SuperWeChatHelper {
 			}
 		});
 	}
-	
+
 	/**
 	 * get instance of EaseNotifier
 	 * @return
@@ -909,14 +909,14 @@ public class SuperWeChatHelper {
 	public EaseNotifier getNotifier(){
 	    return easeUI.getNotifier();
 	}
-	
+
 	public SuperWeChatModel getModel(){
         return (SuperWeChatModel) superWeChatModel;
     }
-	
+
 	/**
 	 * update contact list
-	 * 
+	 *
 	 * @param aContactList
 	 */
 	public void setContactList(Map<String, EaseUser> aContactList) {
@@ -926,18 +926,18 @@ public class SuperWeChatHelper {
 		    }
 			return;
 		}
-		
+
 		contactList = aContactList;
 	}
-	
+
 	/**
-     * save single contact 
+     * save single contact
      */
     public void saveContact(EaseUser user){
     	contactList.put(user.getUsername(), user);
     	superWeChatModel.saveContact(user);
     }
-    
+
     /**
      * get contact list
      *
@@ -947,15 +947,15 @@ public class SuperWeChatHelper {
         if (isLoggedIn() && contactList == null) {
             contactList = superWeChatModel.getContactList();
         }
-        
+
         // return a empty non-null object to avoid app crash
         if(contactList == null){
         	return new Hashtable<String, EaseUser>();
         }
-        
+
         return contactList;
     }
-    
+
     /**
      * set current username
      * @param username
@@ -964,7 +964,7 @@ public class SuperWeChatHelper {
     	this.username = username;
     	superWeChatModel.setCurrentUserName(username);
     }
-    
+
     /**
      * get current user's id
      */
@@ -1014,7 +1014,7 @@ public class SuperWeChatHelper {
 			e.printStackTrace();
 		}
 	}
-	
+
   public void addSyncGroupListener(DataSyncListener listener) {
         if (listener == null) {
             return;
@@ -1068,7 +1068,7 @@ public class SuperWeChatHelper {
             syncBlackListListeners.remove(listener);
         }
     }
-	
+
 	/**
     * Get group list from server
     * This method will save the sync state
@@ -1078,15 +1078,15 @@ public class SuperWeChatHelper {
        if(isSyncingGroupsWithServer){
            return;
        }
-       
+
        isSyncingGroupsWithServer = true;
-       
+
        new Thread(){
            @Override
            public void run(){
                try {
                    EMClient.getInstance().groupManager().getJoinedGroupsFromServer();
-                   
+
                    // in case that logout already before server returns, we should return immediately
                    if(!isLoggedIn()){
                        isGroupsSyncedWithServer = false;
@@ -1094,12 +1094,12 @@ public class SuperWeChatHelper {
                        noitifyGroupSyncListeners(false);
                        return;
                    }
-                   
+
                    superWeChatModel.setGroupsSynced(true);
-                   
+
                    isGroupsSyncedWithServer = true;
                    isSyncingGroupsWithServer = false;
-                   
+
                    //notify sync group list success
                    noitifyGroupSyncListeners(true);
 
@@ -1115,7 +1115,7 @@ public class SuperWeChatHelper {
                        callback.onError(e.getErrorCode(), e.toString());
                    }
                }
-           
+
            }
        }.start();
    }
@@ -1125,14 +1125,14 @@ public class SuperWeChatHelper {
            listener.onSyncComplete(success);
        }
    }
-   
+
    public void asyncFetchContactsFromServer(final EMValueCallBack<List<String>> callback){
        if(isSyncingContactsWithServer){
            return;
        }
-       
+
        isSyncingContactsWithServer = true;
-       
+
        new Thread(){
            @Override
            public void run(){
@@ -1146,7 +1146,7 @@ public class SuperWeChatHelper {
                        notifyContactsSyncListener(false);
                        return;
                    }
-                  
+
                    Map<String, EaseUser> userlist = new HashMap<String, EaseUser>();
                    for (String username : usernames) {
                        EaseUser user = new EaseUser(username);
@@ -1163,13 +1163,13 @@ public class SuperWeChatHelper {
 
                    superWeChatModel.setContactSynced(true);
                    EMLog.d(TAG, "set contact syn status to true");
-                   
+
                    isContactsSyncedWithServer = true;
                    isSyncingContactsWithServer = false;
-                   
+
                    //notify sync success
                    notifyContactsSyncListener(true);
-                   
+
                    getUserProfileManager().asyncFetchContactInfosFromServer(usernames,new EMValueCallBack<List<EaseUser>>() {
 
                        @Override
@@ -1195,7 +1195,7 @@ public class SuperWeChatHelper {
                        callback.onError(e.getErrorCode(), e.toString());
                    }
                }
-               
+
            }
        }.start();
    }
@@ -1205,21 +1205,21 @@ public class SuperWeChatHelper {
            listener.onSyncComplete(success);
        }
    }
-   
+
    public void asyncFetchBlackListFromServer(final EMValueCallBack<List<String>> callback){
-       
+
        if(isSyncingBlackListWithServer){
            return;
        }
-       
+
        isSyncingBlackListWithServer = true;
-       
+
        new Thread(){
            @Override
            public void run(){
                try {
                    List<String> usernames = EMClient.getInstance().contactManager().getBlackListFromServer();
-                   
+
                    // in case that logout already before server returns, we should return immediately
                    if(!isLoggedIn()){
                        isBlackListSyncedWithServer = false;
@@ -1227,38 +1227,38 @@ public class SuperWeChatHelper {
                        notifyBlackListSyncListener(false);
                        return;
                    }
-                   
+
                    superWeChatModel.setBlacklistSynced(true);
-                   
+
                    isBlackListSyncedWithServer = true;
                    isSyncingBlackListWithServer = false;
-                   
+
                    notifyBlackListSyncListener(true);
                    if(callback != null){
                        callback.onSuccess(usernames);
                    }
                } catch (HyphenateException e) {
                    superWeChatModel.setBlacklistSynced(false);
-                   
+
                    isBlackListSyncedWithServer = false;
                    isSyncingBlackListWithServer = true;
                    e.printStackTrace();
-                   
+
                    if(callback != null){
                        callback.onError(e.getErrorCode(), e.toString());
                    }
                }
-               
+
            }
        }.start();
    }
-	
+
 	public void notifyBlackListSyncListener(boolean success){
         for (DataSyncListener listener : syncBlackListListeners) {
             listener.onSyncComplete(success);
         }
     }
-    
+
     public boolean isSyncingGroupsWithServer() {
         return isSyncingGroupsWithServer;
     }
@@ -1270,7 +1270,7 @@ public class SuperWeChatHelper {
     public boolean isSyncingBlackListWithServer() {
         return isSyncingBlackListWithServer;
     }
-    
+
     public boolean isGroupsSyncedWithServer() {
         return isGroupsSyncedWithServer;
     }
@@ -1282,16 +1282,16 @@ public class SuperWeChatHelper {
     public boolean isBlackListSyncedWithServer() {
         return isBlackListSyncedWithServer;
     }
-	
+
     synchronized void reset(){
         isSyncingGroupsWithServer = false;
         isSyncingContactsWithServer = false;
         isSyncingBlackListWithServer = false;
-        
+
         superWeChatModel.setGroupsSynced(false);
         superWeChatModel.setContactSynced(false);
         superWeChatModel.setBlacklistSynced(false);
-        
+
         isGroupsSyncedWithServer = false;
         isContactsSyncedWithServer = false;
         isBlackListSyncedWithServer = false;
