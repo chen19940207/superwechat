@@ -69,7 +69,7 @@ public class SplashActivity extends BaseActivity {
 						Thread.sleep(sleepTime);
 					} catch (InterruptedException e) {
 					}
-					MFGT.gotoGuide(SplashActivity.this);
+					MFGT.gotoMain(SplashActivity.this);
 					finish();
 				}
 			}
