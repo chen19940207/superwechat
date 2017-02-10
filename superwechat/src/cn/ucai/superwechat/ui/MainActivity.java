@@ -86,9 +86,10 @@ public class MainActivity extends BaseActivity implements DMTabHost.OnCheckedCha
     // textview for unread event message
     // private TextView unreadAddressLable;
 
-    private Button[] mTabs;
     private ContactListFragment contactListFragment;
-    private Fragment[] fragments;
+    private ProfileFragment profileFragment;
+    private ConversationListFragment conversationListFragment;
+    private DiscoverFragment discoverFragment;
     private int index;
     private int currentTabIndex;
     // user logged into another device
@@ -140,18 +141,16 @@ public class MainActivity extends BaseActivity implements DMTabHost.OnCheckedCha
     private void initFragment() {
         conversationListFragment = new ConversationListFragment();
         contactListFragment = new ContactListFragment();
-        SettingsFragment settingFragment = new SettingsFragment();
-        fragments = new Fragment[]{conversationListFragment, contactListFragment, settingFragment};
+        profileFragment = new ProfileFragment();
+        discoverFragment = new DiscoverFragment();
 
-//        getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, conversationListFragment)
-//                .add(R.id.fragment_container, contactListFragment).hide(contactListFragment).show(conversationListFragment)
-//                .commit();
         adapter = new MainTabAdpter(getSupportFragmentManager());
         adapter.addFragment(conversationListFragment,"微信");
         adapter.addFragment(contactListFragment, "通讯录");
-        adapter.addFragment(new DiscoverFragment(),"发现");
-        adapter.addFragment(settingFragment, "我");
+        adapter.addFragment(discoverFragment,"发现");
+        adapter.addFragment(profileFragment, "我");
         mlayoutViewpage.setAdapter(adapter);
+        mlayoutTahost.setChecked(0);
         mlayoutTahost.setOnCheckedChangeListener(this);
         mlayoutViewpage.setOnPageChangeListener(this);
     }
@@ -531,7 +530,6 @@ public class MainActivity extends BaseActivity implements DMTabHost.OnCheckedCha
     private AlertDialog.Builder exceptionBuilder;
     private boolean isExceptionDialogShow = false;
     private BroadcastReceiver internalDebugReceiver;
-    private ConversationListFragment conversationListFragment;
     private BroadcastReceiver broadcastReceiver;
     private LocalBroadcastManager broadcastManager;
 

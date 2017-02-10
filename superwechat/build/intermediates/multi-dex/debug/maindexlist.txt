@@ -654,7 +654,6 @@ com/easemob/redpacketui/ui/activity/RPDetailActivity$1.class
 com/baidu/platform/comapi/map/N.class
 com/easemob/redpacketsdk/bean/TokenData.class
 org/apache/http/impl/entity/EntitySerializer.class
-cn/ucai/superwechat/ui/SettingsFragment.class
 com/hyphenate/easeui/ui/EaseConversationListFragment.class
 cn/ucai/superwechat/ui/ForwardMessageActivity.class
 com/baidu/location/BDLocationListener.class
@@ -1296,6 +1295,7 @@ cn/ucai/superwechat/utils/MFGT.class
 cn/ucai/superwechat/ui/GroupBlacklistActivity$BlacklistAdapter.class
 com/hyphenate/easeui/R$drawable.class
 com/easemob/redpacketui/ui/activity/RPBankCardActivity$1.class
+cn/ucai/superwechat/ui/ProfileFragment.class
 org/apache/http/cookie/params/CookieSpecPNames.class
 org/apache/http/protocol/HttpRequestHandlerResolver.class
 cn/ucai/superwechat/ui/GroupBlacklistActivity.class

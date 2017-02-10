@@ -1,5 +1,9 @@
 [
     {
+        "merged": "E:\\Android c\\superwechat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\qrcode.png",
+        "source": "E:\\Android c\\superwechat\\superwechat\\res\\drawable-mdpi\\qrcode.png"
+    },
+    {
         "merged": "E:\\Android c\\superwechat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\em_logo_uidemo.png",
         "source": "E:\\Android c\\superwechat\\superwechat\\res\\drawable-mdpi\\em_logo_uidemo.png"
     },

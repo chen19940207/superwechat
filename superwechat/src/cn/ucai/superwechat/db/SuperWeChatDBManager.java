@@ -382,6 +382,7 @@ public class SuperWeChatDBManager {
     }
 
 
+    //自己的数据库
     /**
      * save contact list
      *
