@@ -11,6 +11,7 @@ import cn.ucai.superwechat.ui.MainActivity;
 import cn.ucai.superwechat.ui.RegisterActivity;
 import cn.ucai.superwechat.ui.SettingsActivity;
 import cn.ucai.superwechat.ui.SplashActivity;
+import cn.ucai.superwechat.ui.UserProfileActivity;
 
 
 /**
@@ -51,5 +52,9 @@ public class MFGT {
 
     public static void gotoMain(SplashActivity activity) {
         startActivity(activity, MainActivity.class);
+    }
+
+    public static void gotoUserProfile(FragmentActivity activity) {
+        startActivity(activity, UserProfileActivity.class);
     }
 }
