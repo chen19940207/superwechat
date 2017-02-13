@@ -27,12 +27,11 @@ import android.os.Bundle;
 import android.os.PowerManager;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.view.ViewPager;
 import android.view.KeyEvent;
 import android.view.View;
-import android.widget.Button;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -58,6 +57,7 @@ import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import cn.ucai.superwechat.Constant;
 import cn.ucai.superwechat.R;
 import cn.ucai.superwechat.SuperWeChatHelper;
@@ -66,11 +66,15 @@ import cn.ucai.superwechat.db.InviteMessgeDao;
 import cn.ucai.superwechat.db.UserDao;
 import cn.ucai.superwechat.runtimepermissions.PermissionsManager;
 import cn.ucai.superwechat.runtimepermissions.PermissionsResultAction;
+import cn.ucai.superwechat.utils.L;
+import cn.ucai.superwechat.utils.MFGT;
 import cn.ucai.superwechat.widget.DMTabHost;
 import cn.ucai.superwechat.widget.MFViewPager;
+import cn.ucai.superwechat.widget.TitleMenu.ActionItem;
+import cn.ucai.superwechat.widget.TitleMenu.TitlePopup;
 
 @SuppressLint("NewApi")
-public class MainActivity extends BaseActivity implements DMTabHost.OnCheckedChangeListener,ViewPager.OnPageChangeListener{
+public class MainActivity extends BaseActivity implements DMTabHost.OnCheckedChangeListener, ViewPager.OnPageChangeListener {
 
     protected static final String TAG = "MainActivity";
     @BindView(R.id.txt_left)
@@ -100,6 +104,7 @@ public class MainActivity extends BaseActivity implements DMTabHost.OnCheckedCha
     private boolean isCurrentAccountRemoved = false;
 
     MainTabAdpter adapter;
+    TitlePopup mTitlePopup;
 
     /**
      * check if current user account was remove
@@ -147,9 +152,9 @@ public class MainActivity extends BaseActivity implements DMTabHost.OnCheckedCha
         discoverFragment = new DiscoverFragment();
 
         adapter = new MainTabAdpter(getSupportFragmentManager());
-        adapter.addFragment(conversationListFragment,"微信");
+        adapter.addFragment(conversationListFragment, "微信");
         adapter.addFragment(contactListFragment, "通讯录");
-        adapter.addFragment(discoverFragment,"发现");
+        adapter.addFragment(discoverFragment, "发现");
         adapter.addFragment(profileFragment, "我");
         mlayoutViewpage.setAdapter(adapter);
         mlayoutTahost.setChecked(0);
@@ -220,8 +225,27 @@ public class MainActivity extends BaseActivity implements DMTabHost.OnCheckedCha
 //        mTabs[0].setSelected(true);
         mtxtLeft.setVisibility(View.VISIBLE);
         mimgRight.setVisibility(View.VISIBLE);
+        mTitlePopup = new TitlePopup(this, ViewGroup.LayoutParams.WRAP_CONTENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT);
+        mTitlePopup.addAction(new ActionItem(this, R.string.menu_groupchat, R.drawable.icon_menu_group));
+        mTitlePopup.addAction(new ActionItem(this, R.string.menu_addfriend, R.drawable.icon_menu_addfriend));
+        mTitlePopup.addAction(new ActionItem(this, R.string.menu_qrcode, R.drawable.icon_menu_sao));
+        mTitlePopup.addAction(new ActionItem(this, R.string.menu_money, R.drawable.icon_menu_money));
+        mTitlePopup.setItemOnClickListener(listener);
     }
 
+    TitlePopup.OnItemOnClickListener listener = new TitlePopup.OnItemOnClickListener(){
+        @Override
+        public void onItemClick(ActionItem item, int position) {
+            L.e(TAG, "item=" + item + ",position=" + position);
+            switch (position) {
+                case 1:
+                    MFGT.gotoAddContact(MainActivity.this);
+                    break;
+
+            }
+        }
+    };
 
 
     /**
@@ -370,7 +394,12 @@ public class MainActivity extends BaseActivity implements DMTabHost.OnCheckedCha
 
     @Override
     public void onCheckedChange(int checkedPosition, boolean byUser) {
-        mlayoutViewpage.setCurrentItem(checkedPosition,false);
+        mlayoutViewpage.setCurrentItem(checkedPosition, false);
+    }
+
+    @OnClick(R.id.img_right)
+    public void showPupo() {
+        mTitlePopup.show(findViewById(R.id.layout_title));
     }
 
     public class MyContactListener implements EMContactListener {
