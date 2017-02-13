@@ -32,6 +32,8 @@
             android:layout_height="60dip"
             android:layout_margin="8dip"
             android:scaleType="centerCrop"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
             android:src="@drawable/em_default_avatar" />
 
     </RelativeLayout>
@@ -60,7 +62,10 @@
         <TextView
             android:id="@+id/tvNickName"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            />
     </RelativeLayout>
 
     <View

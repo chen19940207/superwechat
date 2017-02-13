@@ -22,10 +22,15 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.easeui.domain.User;
+import com.hyphenate.easeui.utils.EaseImageUtils;
 import com.hyphenate.easeui.utils.EaseUserUtils;
 
+import java.io.BufferedOutputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -155,11 +160,10 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
         builder.create().show();
     }
 
-
     private void updateRemoteNick(final String nickName) {
         dialog = ProgressDialog.show(this, getString(R.string.dl_update_nick), getString(R.string.dl_waiting));
         NetDao.updateUserNick(this, EMClient.getInstance().getCurrentUser(), nickName,
-                new OkHttpUtils.OnCompleteListener<String>() {
+                new OnCompleteListener<String>() {
                     @Override
                     public void onSuccess(String res) {
                         dialog.dismiss();
@@ -239,7 +243,7 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
                 break;
             case REQUESTCODE_CUTTING:
                 if (data != null) {
-                    setPicToView(data);
+                    uploadAppUserAvatar(data);
                 }
                 break;
             default:
@@ -277,12 +281,66 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 
     }
 
-//    private void uploadUserAppUserAvatar(final byte[] data) {
-//        File file = null;
-//        dialog = ProgressDialog.show(this, getString(R.string.dl_update_photo), getString(R.string.dl_waiting));
-//        NetDao.uploadUserAvatar(this, EMClient.getInstance().getCurrentUser(), file,
-//                new OnCompleteListener<String>());
-//    }
+    private void uploadAppUserAvatar(Intent picdata) {
+        File file = saveBitmapFile(picdata);
+        L.e(TAG, "file=" + file);
+        if (file == null) {
+            return;
+        }
+        L.e(TAG, "file=" + file.getAbsolutePath());
+        dialog = ProgressDialog.show(this, getString(R.string.dl_update_photo), getString(R.string.dl_waiting));
+        NetDao.uploadUserAvatar(this, EMClient.getInstance().getCurrentUser(), file, new OnCompleteListener<String>() {
+            @Override
+            public void onSuccess(String res) {
+                L.e(TAG, "s=" + res);
+                if (res != null) {
+                    Result result = ResultUtils.getListResultFromJson(res, User.class);
+                    if (result != null) {
+                        if (result.isRetMsg()) {
+                            User user = (User) result.getRetData();
+                            if (user != null) {
+                                PreferenceManager.getInstance().setCurrentUserAvatar(user.getAvatar());
+                                SuperWeChatHelper.getInstance().saveAppContact(user);
+                                EaseUserUtils.setAppUserAvatar(UserProfileActivity.this,
+                                        user.getMUserName(), userHeadAvatar);
+                                CommonUtils.showShortToast(R.string.toast_updatephoto_success);
+                            }
+                        }
+                    }
+                }
+                dialog.dismiss();
+            }
+
+            @Override
+            public void onError(String error) {
+                L.e(TAG, "error=" + error);
+                dialog.dismiss();
+                CommonUtils.showShortToast(R.string.toast_updatenick_fail);
+            }
+        });
+
+    }
+
+    private File saveBitmapFile(Intent picdata) {
+        Bundle extras = picdata.getExtras();
+        if (extras != null) {
+            Bitmap photo = extras.getParcelable("data");
+            String imagePath = EaseImageUtils.getImagePath(EMClient.getInstance().getCurrentUser() + I.AVATAR_SUFFIX_JPG);
+            File file = new File(imagePath);
+            L.e("file path=" + file.getAbsolutePath());
+            try {
+                BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(file));
+                photo.compress(Bitmap.CompressFormat.JPEG, 100, bos);
+                bos.flush();
+                bos.flush();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return file;
+        }
+        return null;
+    }
+
 
     private void uploadUserAvatar(final byte[] data) {
         dialog = ProgressDialog.show(this, getString(R.string.dl_update_photo), getString(R.string.dl_waiting));
