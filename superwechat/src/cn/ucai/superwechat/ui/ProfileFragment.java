@@ -75,8 +75,13 @@ public class ProfileFragment extends Fragment {
 
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        initData();
+    }
 
-//	@Override
+    //	@Override
 //	public void onClick(View v) {
 //		switch (v.getId()) {
 //			//red packet code : 进入零钱页面

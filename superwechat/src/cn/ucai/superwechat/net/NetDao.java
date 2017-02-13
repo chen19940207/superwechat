@@ -50,4 +50,15 @@ public class NetDao {
                 .targetClass(String.class)
                 .execute(listener);
     }
+
+    public static void updateUserNick(Context context, String username, String usernick,
+                                      OkHttpUtils.OnCompleteListener<String> listener) {
+        OkHttpUtils<String> utils = new OkHttpUtils<>(context);
+        utils.setRequestUrl(I.REQUEST_UPDATE_USER_NICK)
+                .addParam(I.User.USER_NAME, username)
+                .addParam(I.User.NICK, usernick)
+                .targetClass(String.class)
+                .execute(listener);
+    }
+//  public static void   uploadUserAvatar(Context context,String username)
 }
