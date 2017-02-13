@@ -6,21 +6,45 @@
     android:orientation="vertical" >
 
     <RelativeLayout
-        android:id="@+id/title"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/height_top_bar"
-        android:background="@color/top_bar_normal_bg"
-        android:gravity="center_vertical" >
+        android:id="@+id/layout_profile_view"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/setting_item_selector"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp">
 
-        <include layout="@layout/ease_commom_back_btn" />
+        <ImageView
+            android:id="@+id/iv_profile_avatar"
+            android:layout_width="60dip"
+            android:layout_height="60dip"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/default_hd_avatar" />
 
         <TextView
+            android:id="@+id/iv_profile_nickname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="@string/diagnose"
-            android:textColor="#fff"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/iv_profile_avatar"
             android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_profile_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_profile_nickname"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/iv_profile_avatar"
+            android:textSize="12sp" />
+        <ImageView
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/qrcode"
+            />
     </RelativeLayout>
 
     <LinearLayout
@@ -33,7 +57,7 @@
             android:layout_height="40dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="@string/Current_version"
+            android:text="设置备注"
             android:textColor="@color/gray_normal"
             android:textSize="18sp" />
 
@@ -49,6 +73,18 @@
 
     <Button
         android:id="@+id/button_uploadlog"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="32dp"
+        android:background="@color/top_bar_normal_bg"
+        android:text="@string/button_uploadlog"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+    <Button
+        android:id="@+id/button_uploadlog1"
         android:layout_width="match_parent"
         android:layout_height="44dp"
         android:layout_marginBottom="12dp"
