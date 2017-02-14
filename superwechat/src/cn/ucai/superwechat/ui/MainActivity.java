@@ -474,17 +474,21 @@ public class MainActivity extends BaseActivity implements DMTabHost.OnCheckedCha
      * update the total unread count
      */
     public void updateUnreadAddressLable() {
-//        runOnUiThread(new Runnable() {
-//            public void run() {
-//                int count = getUnreadAddressCountTotal();
-//                if (count > 0) {
+        runOnUiThread(new Runnable() {
+            public void run() {
+                int count = getUnreadAddressCountTotal();
+                if (count > 1) {
+                    mlayoutTahost.setUnreadCount(1, count);
+                } else if (count == 1) {
+                    mlayoutTahost.setHasNew(1, true);
+                }
 //                    unreadAddressLable.setVisibility(View.VISIBLE);
-//                } else {
+                else {
+                    mlayoutTahost.setHasNew(1, false);
 //                    unreadAddressLable.setVisibility(View.INVISIBLE);
-//                }
-//            }
-//        });
-
+                }
+            }
+        });
     }
 
     /**

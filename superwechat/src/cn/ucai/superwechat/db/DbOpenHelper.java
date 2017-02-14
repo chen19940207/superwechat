@@ -36,12 +36,16 @@ public class DbOpenHelper extends SQLiteOpenHelper {
             + InviteMessgeDao.COLUMN_NAME_FROM + " TEXT, "
             + InviteMessgeDao.COLUMN_NAME_GROUP_ID + " TEXT, "
             + InviteMessgeDao.COLUMN_NAME_GROUP_Name + " TEXT, "
+            + InviteMessgeDao.COLUMN_NAME_NICKNAME + " TEXT, "
+            + InviteMessgeDao.COLUMN_NAME_AVATAR_SUFFIX + " TEXT, "
+            + InviteMessgeDao.COLUMN_NAME_AVATAR_TIME + " TEXT, "
             + InviteMessgeDao.COLUMN_NAME_REASON + " TEXT, "
             + InviteMessgeDao.COLUMN_NAME_STATUS + " INTEGER, "
             + InviteMessgeDao.COLUMN_NAME_ISINVITEFROMME + " INTEGER, "
             + InviteMessgeDao.COLUMN_NAME_UNREAD_MSG_COUNT + " INTEGER, "
             + InviteMessgeDao.COLUMN_NAME_TIME + " TEXT, "
             + InviteMessgeDao.COLUMN_NAME_GROUPINVITER + " TEXT); ";
+
 
     private static final String ROBOT_TABLE_CREATE = "CREATE TABLE "
             + UserDao.ROBOT_TABLE_NAME + " ("
