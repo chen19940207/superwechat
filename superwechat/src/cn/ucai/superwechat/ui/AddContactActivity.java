@@ -110,7 +110,7 @@ public class AddContactActivity extends BaseActivity{
 							User user = (User) result.getRetData();
 							if (user != null) {
 								isSuccess = true;
-								MFGT.gotoFirent(AddContactActivity.this,user);
+								MFGT.gotoFriend(AddContactActivity.this,user);
 							}
 						}
 					}

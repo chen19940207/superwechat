@@ -22,7 +22,7 @@
             android:layout_centerInParent="true"
             android:textColor="#fff"
             android:textSize="18sp" />
-        
+
         <Button
             android:id="@+id/search"
             android:layout_width="54dp"
