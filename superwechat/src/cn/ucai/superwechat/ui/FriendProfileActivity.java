@@ -1,6 +1,5 @@
 package cn.ucai.superwechat.ui;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,7 +18,7 @@ import cn.ucai.superwechat.SuperWeChatHelper;
 import cn.ucai.superwechat.utils.L;
 import cn.ucai.superwechat.utils.MFGT;
 
-public class FriendProfileActivity extends Activity {
+public class FriendProfileActivity extends BaseActivity {
 
     @BindView(R.id.img_back)
     ImageView mImgBack;
@@ -39,6 +38,7 @@ public class FriendProfileActivity extends Activity {
     Button mBtnSendVideo;
     User user = null;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +52,7 @@ public class FriendProfileActivity extends Activity {
         mTxtTitle.setVisibility(View.VISIBLE);
         mTxtTitle.setText(R.string.userinfo_txt_profile);
         user = (User) getIntent().getSerializableExtra(I.User.USER_NAME);
-        L.e("FriendPro","user="+user);
+        L.e("FriendPro", "user=" + user);
         if (user != null) {
             showUserInfo();
         } else {
@@ -60,8 +60,8 @@ public class FriendProfileActivity extends Activity {
         }
     }
 
-    private void showUserInfo( ) {
-        L.e("FriendPro","showUserInfo"+user);
+    private void showUserInfo() {
+        L.e("FriendPro", "showUserInfo" + user);
         mTvUserinfoNick.setText(user.getMUserNick());
         EaseUserUtils.setAppUserAvatarByPath(this, user.getAvatar(), mProfileImage);
         mTvUserinfoName.setText("微信号：" + user.getMUserName());
@@ -75,18 +75,23 @@ public class FriendProfileActivity extends Activity {
 
     private boolean isFriend() {
         User us = SuperWeChatHelper.getInstance().getAppContactList().get(user.getMUserName());
-        L.e("FriendPro","us="+us);
+        L.e("FriendPro", "us=" + us);
         if (us == null) {
             return false;
         } else {
             SuperWeChatHelper.getInstance().saveAppContact(user);
             return true;
         }
-}
+    }
 
 
     @OnClick(R.id.img_back)
-    public void onClick() {
+    public void imgBack() {
         finish();
+    }
+
+    @OnClick(R.id.btn_add_contact)
+    public void sendAddContactMsg() {
+        MFGT.gotoAddFriend(this, user.getMUserName());
     }
 }
