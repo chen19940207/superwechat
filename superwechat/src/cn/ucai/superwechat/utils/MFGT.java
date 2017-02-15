@@ -54,12 +54,9 @@ public class MFGT {
         startActivity(activity, SettingsActivity.class);
     }
 
-    public static void gotoLoginClenTask(Activity activiyt) {
-        startActivity(activiyt, new Intent(activiyt, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK));
-    }
-
-    public static void gotoMain(Activity activity) {
-        startActivity(activity, MainActivity.class);
+    public static void gotoLoginClenTask(Activity activity) {
+        startActivity(activity, new Intent(activity, LoginActivity.class)
+                .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK));
     }
 
     public static void gotoUserProfile(FragmentActivity activity) {
@@ -89,8 +86,11 @@ public class MFGT {
                 .putExtra("userId", username));
     }
 
-    public static void gotoMainBack(Activity activity) {
+    public static void gotoMain(Activity activity) {
         startActivity(activity, new Intent(activity,MainActivity.class)
                 .putExtra(I.BACK_MAIN_FROM_CHAT,true));
+    }
+    public static void gotoGuide(SplashActivity splashActivity) {
+        startActivity(splashActivity, GuideActivity.class);
     }
 }

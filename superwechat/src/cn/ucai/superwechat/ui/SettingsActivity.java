@@ -37,7 +37,7 @@ import cn.ucai.superwechat.utils.PreferenceManager;
  * settings screen
  */
 @SuppressWarnings({"FieldCanBeLocal"})
-public class SettingsActivity extends Activity implements OnClickListener {
+public class SettingsActivity extends BaseActivity implements OnClickListener {
 
 
     @BindView(R.id.img_back)
