@@ -45,7 +45,6 @@
         android:protectionLevel="signatureOrSystem" />
 
     <uses-permission android:name="cn.ucai.superwechat.permission.MIPUSH_RECEIVE" />
-
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
@@ -82,9 +81,9 @@
 
         <!-- 设置 -->
         <activity
-                    android:name=".ui.SettingsActivity"
-                    android:screenOrientation="portrait"
-                    android:theme="@style/horizontal_slide" />
+            android:name=".ui.SettingsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide" />
         <!-- 注册 -->
         <activity
             android:name=".ui.RegisterActivity"
@@ -505,7 +504,9 @@
         <activity
             android:name=".ui.GuideActivity"
             android:label="@string/title_activity_guide"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".ui.FriendProfileActivity" />
+        <activity android:name=".ui.AddFriendActivity"></activity>
     </application>
 
 </manifest>
