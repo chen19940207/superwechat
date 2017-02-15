@@ -128,4 +128,9 @@ public class FriendProfileActivity extends BaseActivity {
     public void sendAddContactMsg() {
         MFGT.gotoAddFriend(this, user.getMUserName());
     }
+
+    @OnClick(R.id.btn_send_msg)
+    public void sendMsg(View view) {
+        MFGT.gotoChat(this, user.getMUserName());
+    }
 }
