@@ -1188,6 +1188,39 @@ public class SuperWeChatHelper {
 
         isSyncingContactsWithServer = true;
 
+        if (isLoggedIn()) {
+            NetDao.loadContact(appContext, EMClient.getInstance().getCurrentUser(),
+                    new OnCompleteListener<String>() {
+                        @Override
+                        public void onSuccess(String s) {
+                            if (s != null) {
+                                Result result = ResultUtils.getListResultFromJson(s, User.class);
+                                if (result != null && result.isRetMsg()) {
+                                    List<User> list = (List<User>) result.getRetData();
+                                    if (list != null && list.size() > 0) {
+                                        Map<String, User> userMap = new HashMap<String, User>();
+                                        for (User u : list) {
+                                            EaseCommonUtils.setAppUserInitialLetter(u);
+                                            userMap.put(username, u);
+                                        }
+                                        getAppContactList().clear();
+                                        getAppContactList().putAll(userMap);
+                                        // save the contact list to database
+                                        UserDao dao = new UserDao(appContext);
+                                        dao.saveAppContactList(list);
+                                        broadcastManager.sendBroadcast(new Intent(Constant.ACTION_CONTACT_CHANAGED));
+                                    }
+                                }
+                            }
+                        }
+
+                        @Override
+                        public void onError(String error) {
+
+                        }
+                    });
+        }
+
         new Thread() {
             @Override
             public void run() {
