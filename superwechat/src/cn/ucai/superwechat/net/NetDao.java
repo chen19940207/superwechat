@@ -19,7 +19,7 @@ import cn.ucai.superwechat.video.util.Utils;
 
 public class NetDao {
     public static void register(Context context, String username, String nick, String password,
-                             OnCompleteListener<String> listener) {
+                                OnCompleteListener<String> listener) {
         OkHttpUtils<String> utils = new OkHttpUtils<>(context);
         utils.setRequestUrl(I.REQUEST_REGISTER)
                 .addParam(I.User.USER_NAME, username)
@@ -38,8 +38,8 @@ public class NetDao {
                 .execute(listener);
     }
 
-    public static void login(Context context, String username,String password,
-                                OnCompleteListener<String> listener) {
+    public static void login(Context context, String username, String password,
+                             OnCompleteListener<String> listener) {
         OkHttpUtils<String> utils = new OkHttpUtils<>(context);
         utils.setRequestUrl(I.REQUEST_REGISTER)
                 .addParam(I.User.USER_NAME, username)
@@ -49,7 +49,7 @@ public class NetDao {
     }
 
     public static void getUserInfoByUsername(Context context, String username,
-                                OnCompleteListener<String> listener) {
+                                             OnCompleteListener<String> listener) {
         OkHttpUtils<String> utils = new OkHttpUtils<>(context);
         utils.setRequestUrl(I.REQUEST_FIND_USER)
                 .addParam(I.User.USER_NAME, username)
@@ -58,7 +58,7 @@ public class NetDao {
     }
 
     public static void updateUserNick(Context context, String username, String usernick,
-                                     OnCompleteListener<String> listener) {
+                                      OnCompleteListener<String> listener) {
         OkHttpUtils<String> utils = new OkHttpUtils<>(context);
         utils.setRequestUrl(I.REQUEST_UPDATE_USER_NICK)
                 .addParam(I.User.USER_NAME, username)
@@ -84,13 +84,13 @@ public class NetDao {
         OkHttpUtils<String> utils = new OkHttpUtils<>(context);
         utils.setRequestUrl(I.REQUEST_ADD_CONTACT)
                 .addParam(I.Contact.USER_NAME, username)
-                .addParam(I.Contact.CU_NAME,cname )
+                .addParam(I.Contact.CU_NAME, cname)
                 .targetClass(String.class)
                 .execute(listener);
     }
 
     public static void loadContact(Context context, String username,
-                                  OnCompleteListener<String> listener) {
+                                   OnCompleteListener<String> listener) {
         OkHttpUtils<String> utils = new OkHttpUtils<>(context);
         utils.setRequestUrl(I.REQUEST_DOWNLOAD_CONTACT_ALL_LIST)
                 .addParam(I.Contact.USER_NAME, username)
@@ -99,11 +99,11 @@ public class NetDao {
     }
 
     public static void removeContact(Context context, String username, String cname,
-                                  OnCompleteListener<String> listener) {
+                                     OnCompleteListener<String> listener) {
         OkHttpUtils<String> utils = new OkHttpUtils<>(context);
         utils.setRequestUrl(I.REQUEST_DELETE_CONTACT)
                 .addParam(I.Contact.USER_NAME, username)
-                .addParam(I.Contact.CU_NAME,cname )
+                .addParam(I.Contact.CU_NAME, cname)
                 .targetClass(String.class)
                 .execute(listener);
     }
@@ -118,9 +118,19 @@ public class NetDao {
                 .addParam(I.Group.OWNER, group.getOwner())
                 .addParam(I.Group.IS_PUBLIC, String.valueOf(group.isPublic()))
                 .addParam(I.Group.ALLOW_INVITES, String.valueOf(group.isAllowInvites()))
-                .targetClass(String.class)
                 .addFile2(file)
+                .targetClass(String.class)
                 .post()
                 .execute(listener);
     }
+
+    public static void addGroupMember(Context context, String members, String hxid, OnCompleteListener<String> listener) {
+        OkHttpUtils<String> utils = new OkHttpUtils<>(context);
+        utils.setRequestUrl(I.REQUEST_ADD_GROUP_MEMBERS)
+                .addParam(I.Member.USER_NAME, members)
+                .addParam(I.Member.GROUP_HX_ID, hxid)
+                .targetClass(String.class)
+                .execute(listener);
+    }
 }
+

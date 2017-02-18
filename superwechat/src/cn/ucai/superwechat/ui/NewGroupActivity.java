@@ -164,7 +164,7 @@ public class NewGroupActivity extends BaseActivity {
                     }
                     EMGroup group = EMClient.getInstance().groupManager().createGroup(groupName, desc, members, reason, option);
                     String hxid = group.getGroupId();
-                    createAppGroup(group);
+                    createAppGroup(group,members);
 
                 } catch (final HyphenateException e) {
                     runOnUiThread(new Runnable() {
@@ -178,7 +178,7 @@ public class NewGroupActivity extends BaseActivity {
         }).start();
     }
 
-    private void createAppGroup(EMGroup group) {
+    private void createAppGroup(final EMGroup group, final String[] members) {
         NetDao.createGroup(this, group, file, new OnCompleteListener<String>() {
             @Override
             public void onSuccess(String s) {
@@ -187,7 +187,11 @@ public class NewGroupActivity extends BaseActivity {
                     Result result = ResultUtils.getResultFromJson(s, Group.class);
                     if (result != null) {
                         if (result.isRetMsg()) {
-                            createGroupSuccess();
+                            if (members != null && members.length > 1) {
+                                addGroupMembers(group.getGroupId(), members);
+                            } else {
+                                createGroupSuccess();
+                            }
                         } else {
                             progressDialog.dismiss();
                             if (result.getRetCode() == I.MSG_GROUP_HXID_EXISTS) {
@@ -210,6 +214,47 @@ public class NewGroupActivity extends BaseActivity {
         });
     }
 
+    private void addGroupMembers(String hxid, String[] members) {
+                NetDao.addGroupMember(this, getGroupMembers(members), hxid, new OnCompleteListener<String>() {
+                        @Override
+                        public void onSuccess(String s) {
+                                progressDialog.dismiss();
+                                L.e(TAG, "addGroupMembers,s="+  s);
+                                boolean isSuccess = false;
+                                if (s != null) {
+                                        Result result = ResultUtils.getResultFromJson(s, Group.class);
+                                        L.e(TAG, "addGroupMembers,result=" + result);
+                                        if (result != null && result.isRetMsg()) {
+                                                createGroupSuccess();
+                                                isSuccess = true;
+                                            }
+                                    }
+                
+                                        if (!isSuccess) {
+                                        CommonUtils.showShortToast(R.string.Failed_to_create_groups);
+                                    }
+                            }
+            
+                                @Override
+                        public void onError(String error) {
+                                L.e(TAG, "addGroupMembers,error="+  error);
+                                if (progressDialog != null && progressDialog.isShowing()) {
+                                        progressDialog.dismiss();
+                                    }
+                            }
+                    });
+            }
+
+    private String getGroupMembers(String[] members) {
+                String membersStr = "";
+                if (members.length > 0) {
+                        for (String s : members) {
+                                membersStr+= s + ",";
+                            }
+                    }
+                L.e(TAG, "getGroupMembers,s="+  membersStr);
+                return membersStr;
+    }
 //    @OnClick({R.id.ivback, R.id.layout_group_icon})
 //    public void onClick(View view) {
 //        switch (view.getId()) {
