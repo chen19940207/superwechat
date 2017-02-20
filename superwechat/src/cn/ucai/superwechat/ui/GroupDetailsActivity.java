@@ -59,6 +59,8 @@ import com.hyphenate.util.NetUtils;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.baidu.mapapi.BMapManager.getContext;
+
 public class GroupDetailsActivity extends BaseActivity implements OnClickListener {
     private static final String TAG = "GroupDetailsActivity";
     private static final int REQUEST_CODE_ADD_USER = 0;
@@ -394,6 +396,17 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
         }).start();
     }
 
+    private String getGroupMemebers(String[] members) {
+        String membersStr = "";
+        if (members.length > 0) {
+            for (String s : members) {
+                membersStr += s + ",";
+            }
+        }
+        L.e(TAG, "getGroupMemebers,membersStr=" + membersStr);
+        return membersStr;
+    }
+
     /**
      * 增加群成员
      *
@@ -415,11 +428,23 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
                     runOnUiThread(new Runnable() {
                         public void run() {
                             refreshMembers();
-                            ((TextView) findViewById(R.id.group_name)).setText(group.getGroupName() + "(" + group.getMemberCount()
+                            ((TextView) findViewById(R.id.group_name)).setText(group.getGroupName()+"("+group.getMemberCount()
                                     + st);
                             progressDialog.dismiss();
                         }
                     });
+                    NetDao.addGroupMember(getContext(), getGroupMemebers(newmembers), groupId, new OnCompleteListener<String>() {
+                        @Override
+                        public void onSuccess(String s) {
+                            L.e(TAG, "addMembersToGroup,s=" + s);
+                        }
+
+                        @Override
+                        public void onError(String error) {
+
+                        }
+                    });
+
                 } catch (final Exception e) {
                     runOnUiThread(new Runnable() {
                         public void run() {
