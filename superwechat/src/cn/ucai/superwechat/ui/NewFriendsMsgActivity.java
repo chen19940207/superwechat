@@ -28,6 +28,7 @@ import cn.ucai.superwechat.R;
 import cn.ucai.superwechat.adapter.NewFriendsMsgAdapter;
 import cn.ucai.superwechat.db.InviteMessgeDao;
 import cn.ucai.superwechat.domain.InviteMessage;
+import cn.ucai.superwechat.utils.L;
 import cn.ucai.superwechat.utils.MFGT;
 
 /**
@@ -35,7 +36,7 @@ import cn.ucai.superwechat.utils.MFGT;
  *
  */
 public class NewFriendsMsgActivity extends BaseActivity {
-
+    private static final String TAG = "NewFriendsMsgActivity";
     @BindView(R.id.img_back)
     ImageView imgBack;
     @BindView(R.id.txt_title)
@@ -54,7 +55,9 @@ public class NewFriendsMsgActivity extends BaseActivity {
         List<InviteMessage> msgs = dao.getMessagesList();
 
         NewFriendsMsgAdapter adapter = new NewFriendsMsgAdapter(this, 1, msgs);
+        L.e(TAG,"adapter="+adapter);
         listView.setAdapter(adapter);
+        L.e(TAG,"listView="+listView);
         dao.saveUnreadMessageCount(0);
         initView();
     }
