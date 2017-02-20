@@ -222,7 +222,17 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
                     if (!TextUtils.isEmpty(returnData)) {
                         progressDialog.setMessage(st5);
                         progressDialog.show();
+                        NetDao.updateGroupName(GroupDetailsActivity.this, groupId, returnData, new OnCompleteListener<String>() {
+                            @Override
+                            public void onSuccess(String s) {
+                                L.e(TAG, "REQUEST_CODE_EDIT_GROUPNAME,s=" + s);
+                            }
 
+                            @Override
+                            public void onError(String error) {
+
+                            }
+                        });
                         new Thread(new Runnable() {
                             public void run() {
                                 try {
@@ -260,6 +270,7 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
         pd.setCanceledOnTouchOutside(false);
         pd.setMessage(getString(R.string.Are_moving_to_blacklist));
         pd.show();
+
         new Thread(new Runnable() {
             public void run() {
                 try {
@@ -414,8 +425,19 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
      */
     private void addMembersToGroup(final String[] newmembers) {
         final String st6 = getResources().getString(R.string.Add_group_members_fail);
-        new Thread(new Runnable() {
 
+        NetDao.addGroupMember(GroupDetailsActivity.this, getGroupMemebers(newmembers), groupId, new OnCompleteListener<String>() {
+                        @Override
+                        public void onSuccess(String s) {
+                                L.e(TAG, "addMembersToGroup,s=" + s);
+                            }
+            
+                                @Override
+                        public void onError(String error) {
+                
+                                    }
+                    });
+        new Thread(new Runnable() {
             public void run() {
                 try {
                     // 创建者调用add方法
@@ -431,17 +453,6 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
                             ((TextView) findViewById(R.id.group_name)).setText(group.getGroupName()+"("+group.getMemberCount()
                                     + st);
                             progressDialog.dismiss();
-                        }
-                    });
-                    NetDao.addGroupMember(getContext(), getGroupMemebers(newmembers), groupId, new OnCompleteListener<String>() {
-                        @Override
-                        public void onSuccess(String s) {
-                            L.e(TAG, "addMembersToGroup,s=" + s);
-                        }
-
-                        @Override
-                        public void onError(String error) {
-
                         }
                     });
 
